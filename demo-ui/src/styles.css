@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.highlightText {
+  font-weight: bold;
+}
+
+body {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+
+.click {
+  cursor: pointer;
+}

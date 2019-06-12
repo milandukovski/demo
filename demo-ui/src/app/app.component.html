@@ -1,0 +1,42 @@
+<div _ngcontent-c23="" class="viewer-title">
+  <div _ngcontent-c23="" class="viewer-title-spacer">DEMO</div>
+</div>
+
+<mat-checkbox class="checkbox" (ngModel)="searchBooks" (click)="changeSearchBookCb(searchBooks)">Search by books
+</mat-checkbox>
+
+<mat-form-field class="search">
+  <input matInput type="text" placeholder="{{searchBooks ? 'Search books' : 'Search authors'}}"
+         (input)="onSearchChange($event.target.value)">
+</mat-form-field>
+
+<div *ngIf="!searchBooks">
+  <mat-card class="card" *ngFor="let author of authors">
+    <mat-card-header class="click" (click)="showAuthorBooks(author)">
+      <mat-card-title><span [innerHTML]="highlightText(displayAuthorName(author))"></span></mat-card-title>
+      <mat-card-subtitle><span [innerHTML]="highlightText(displayAuthorAddress(author))"></span></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content *ngIf="selectedAuthor == author && authorBooks">
+      <h4>Books:</h4>
+      <ul>
+        <li *ngFor="let aBook of authorBooks">
+          {{aBook.title}}
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+<div *ngIf="searchBooks">
+  <mat-card class="card" *ngFor="let book of books">
+    <mat-card-header>
+      <mat-card-title><span [innerHTML]="highlightText(book.title)"></span></mat-card-title>
+      <mat-card-subtitle><span [innerHTML]="highlightText(book.type)"></span></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p [innerHTML]="highlightText(book.description)">
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
