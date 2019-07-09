@@ -7,4 +7,4 @@ This project is only for demonstration purposes
 3. Start the back-end server(Spring Application)
 4. Start the angular application
  * cd demo-ui
- * execute `npm st
+ * execute `npm start`
